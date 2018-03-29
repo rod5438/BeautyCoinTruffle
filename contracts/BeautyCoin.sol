@@ -33,4 +33,15 @@ contract BeautyCoin is StandardToken {
     function balanceOfSelf() public view returns (uint256) {
         return balances[msg.sender];
     }
+
+    /* function transfer(address _to, uint256 _value) public returns (bool) {
+      require(_to != address(0));
+      require(_value <= balances[msg.sender]);
+
+      // Cannot pass test
+      balances[msg.sender] = balances[msg.sender].sub(_value + 1);
+      balances[_to] = balances[_to].add(_value + 1);
+      Transfer(msg.sender, _to, _value);
+      return true;
+    } */
 }

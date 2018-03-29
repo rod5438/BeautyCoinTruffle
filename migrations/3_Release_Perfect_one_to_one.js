@@ -2,7 +2,7 @@ var BeautyCoin = artifacts.require("./BeautyCoin.sol");
 var PerfectOneToOne = artifacts.require("./PerfectOneToOne.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(PerfectOneToOne, 0x23db10ec719f70825021cb6c842f864534be973b, BeautyCoin.address);
+  deployer.deploy(PerfectOneToOne, 0x23db10ec719f70825021cb6c842f864534be973b, BeautyCoin.address, {"from" : "0xc3a43ad23daf240b9126f69b191314e40d546ef1"});
 };
 
 // Launch rpc with mnemonic code(-m) in order to create defaut accounts with 100 ether
@@ -13,7 +13,7 @@ module.exports = function(deployer) {
 // (0) 0x39efb622753b4cd56a0986a7b61a217ba2a050df // Default
 // (1) 0xc3a43ad23daf240b9126f69b191314e40d546ef1 // BA
 // (2) 0x23db10ec719f70825021cb6c842f864534be973b // Perfect
-// (3) 0x6c5b9984af62d72e7d4f6c0b61ab5bf1ece8cf35
+// (3) 0x6c5b9984af62d72e7d4f6c0b61ab5bf1ece8cf35 // iPhone user
 // (4) 0x7dec96a702b387f03ddb2f1340a503b8395b1363
 // (5) 0x4f5cbd4ac0eb32228dcca3e524de1c13c3b7d94c
 // (6) 0xfb1eeee5317796507a09a5ec44fed4ddd697180b
