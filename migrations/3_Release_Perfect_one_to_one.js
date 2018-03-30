@@ -1,8 +1,15 @@
 var BeautyCoin = artifacts.require("./BeautyCoin.sol");
 var PerfectOneToOne = artifacts.require("./PerfectOneToOne.sol");
+const Web3 = require('web3');
+const TruffleConfig = require('../truffle');
 
-module.exports = function(deployer) {
-  deployer.deploy(PerfectOneToOne, 0x23db10ec719f70825021cb6c842f864534be973b, BeautyCoin.address, {"from" : "0xc3a43ad23daf240b9126f69b191314e40d546ef1"});
+module.exports = function(deployer, network, accounts) {
+  if (network == "privateChain") {
+    const config = TruffleConfig.networks[network];
+    const web3 = new Web3(new Web3.providers.HttpProvider('http://' + config.host + ':' + config.port));
+    web3.eth.personal.unlockAccount(accounts[1], 'jason', 36000); // Not good for showing password
+  }
+  deployer.deploy(PerfectOneToOne, accounts[2], BeautyCoin.address, {"from" : accounts[1]});
 };
 
 // Launch rpc with mnemonic code(-m) in order to create defaut accounts with 100 ether
