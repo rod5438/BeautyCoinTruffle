@@ -11,7 +11,7 @@ module.exports = {
       host: "192.168.8.86", // Jason's macbook pro
       port: 8545,
       network_id: "1108", // Private chain ID
-      gas: 4712388, // Default gas is not enough now
+      gas: 2712388, // Default gas is not enough now
       gasPrice: 100000000000,
     }
   }
